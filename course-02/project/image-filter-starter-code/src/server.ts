@@ -37,6 +37,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
         .status(400)
         .send({ message: 'Image Url is required' });
     }
+
     let filteredImage = await filterImageFromURL(imageUrl);
     if (!filteredImage) {
       return res
@@ -48,12 +49,12 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       deleteLocalFiles(filteredImage.split(" "));
     });
   })
+
   // Root Endpoint
   // Displays a simple message to the user
   app.get( "/", async ( req, res ) => {
     res.send("try GET /filteredimage?image_url={{}}")
   } );
-  
 
   // Start the Server
   app.listen( port, () => {
