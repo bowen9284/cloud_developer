@@ -11,7 +11,8 @@ export const config = {
     dialect: 'postgres',
     aws_region:  devConfig.AWS_REGION,
     aws_profile:  devConfig.AWS_PROFILE,
-    aws_media_bucket:  devConfig.AWS_BUCKET
+    aws_media_bucket:  devConfig.AWS_BUCKET,
+    jwt_secret: devConfig.JWT_SECRET
   },
   prod: {
     username: '',
